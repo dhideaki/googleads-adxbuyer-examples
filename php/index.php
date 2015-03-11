@@ -94,6 +94,6 @@ if ($client->getAccessToken()) {
  */
 function getSupportedActions() {
   return array('GetAllAccounts', 'GetCreative', 'GetDirectDeals',
-      'SubmitCreative', 'UpdateAccount', 'ListPerformanceReport',
+      'SubmitCreative', 'ListCreatives', 'UpdateAccount', 'ListPerformanceReport',
       'InsertPretargetingConfig');
 }
