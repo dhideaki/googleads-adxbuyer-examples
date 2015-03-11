@@ -28,27 +28,10 @@
  *
  * For example:"google-api-php-client/src/"
  */
-set_include_path('<PATH_TO_PHP_CLIENT>' . PATH_SEPARATOR . get_include_path());
-
-require_once 'Google/Client.php';
-require_once 'Google/Service/AdExchangeBuyer.php';
+require_once "account.inc.php";
 require_once "htmlHelper.php";
 
 session_start();
-
-/*
- * You can retrieve these from the Google Developers Console.
- *
- * See README.md for details.
- */
-$service_account_name = '<YOUR_SERVICE_ACCOUNT_EMAIL>';
-$key_file_location = '<PATH_TO_P12>';
-
-if ($service_account_name === '<YOUR_SERVICE_ACCOUNT_EMAIL>'
-    || $key_file_location === '<PATH_TO_P12>') {
-  echo '<h1>WARNING: Authorization details not provided!</h1>';
-  exit(1);
-}
 
 $client = new Google_Client();
 $client->setApplicationName('DoubleClick Ad Exchange Buyer REST API PHP' .

@@ -20,7 +20,6 @@
  * functions.
  */
 
-require_once 'Google/Service/AdExchangeBuyer.php';
 require_once "htmlHelper.php";
 
 /**
@@ -139,7 +138,7 @@ abstract class BaseExample {
    */
   protected function printResult($result) {
     printf('<pre>');
-    print_r($result);
+    echo htmlspecialchars(print_r($result, true));
     printf('</pre>');
   }
 }
