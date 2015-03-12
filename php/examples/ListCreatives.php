@@ -32,7 +32,10 @@ class ListCreatives extends BaseExample {
    * @see BaseExample::getInputParameters()
    */
   protected function getInputParameters() {
-    return array(array('name' => 'nextpage_token',
+    return array(array('name' => 'status_filter',
+                       'display' => 'statusFilter (approved/disapproved/not_checked)',
+                       'required' => false),
+                 array('name' => 'nextpage_token',
                        'display' => 'nextPageToken',
                        'required' => false));
   }
@@ -46,6 +49,9 @@ class ListCreatives extends BaseExample {
     $optParams = array('maxResults' => 1000);
     if (!empty($values['nextpage_token'])) {
       $optParams['pageToken'] = $values['nextpage_token'];
+    }
+    if (!empty($values['status_filter'])) {
+      $optParams['statusFilter'] = $values['status_filter'];
     }
     $result = $this->service->creatives->listCreatives($optParams);
 
